@@ -10,11 +10,30 @@
 	networking.networkmanager.enable = true;
 
 	time.timeZone = "America/Denver";
+
+	users.users.thomas = {
+		isNormalUser = true;
+		extraGroups = [ "wheel" "networkmanager" ];
+	};
+
+	programs.hyprland.enable = true;
 	
+	nixpkgs.config.allowUnfree = true;
+
 	environment.systemPackages = with pkgs; [
+		git
 		neovim
 		zellij
+		kitty
 	];
+
+	jovian.steam = {
+		enable = true;
+		user = "thomas";
+		autoStart = true;
+		desktopSession = "hyprland";
+	};
+	jovian.devices.steamdeck.enable = true;
 
 	disko.devices = import ./disko.nix;
 
