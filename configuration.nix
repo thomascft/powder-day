@@ -18,6 +18,13 @@
 
 	programs.hyprland.enable = true;
 	
+	nix = {
+		package = pkgs.nixFlakes;
+		extraOptions = ''
+			experimental-features = nix-command flakes
+		'';
+	};
+
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
@@ -25,6 +32,7 @@
 		neovim
 		zellij
 		kitty
+		brave
 	];
 
 	jovian.steam = {
