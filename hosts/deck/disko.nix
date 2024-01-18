@@ -52,9 +52,11 @@
 				windows-root = {
 					priority = 4;
 					size = "100%";
+					type = "0700";
 					content = {
 						type = "filesystem";
 						format = "ntfs";
+						extraArgs = [ "-Q"];
 						# Add no zero mode
 					};
 				};

@@ -4,6 +4,8 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+		flake-parts.url = "github:hercules-ci/flake-parts";
+
 		home-manager.url = "github:nix-community/home-manager";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -16,7 +18,35 @@
 		aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     		aagl.inputs.nixpkgs.follows = "nixpkgs";
 	};
-	outputs = inputs@{self, nixpkgs, home-manager, disko, jovian, aagl, ...}:{
+	outputs = inputs@{ flake-parts, ...}: flake-parts.lib.mkFlake {inherit inputs;} {
+		imports = [
+			./hosts
+		];
+
+		flake = {
+			homeConfigurations."thomas@deck" = inputs.home-manager.lib.homeManagerConfiguration {
+				pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+				extraSpecialArgs = {inherit inputs;};
+
+				modules = [
+					./home/main.nix
+				];	
+			};
+
+		};
+
+		systems = [
+			"x86_64-linux"
+		];
+
+		perSystem = {...}: {
+
+		};
+
+
+
+	};
+	/*outputs = inputs@{self, nixpkgs, home-manager, disko, jovian, aagl, ...}:{
 		nixosConfigurations.deck = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 
@@ -28,13 +58,5 @@
 				aagl.nixosModules.default
 			];
 		};
-		homeConfigurations."thomas@deck" = home-manager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages.x86_64-linux;
-			extraSpecialArgs = {inherit inputs;};
-
-			modules = [
-				./home/main.nix
-			];	
-		};
-	};
+	};*/
 }

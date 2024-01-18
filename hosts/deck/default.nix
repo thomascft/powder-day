@@ -31,14 +31,19 @@
 		git
 		neovim
 		zellij
-		kitty
-		brave
+		cachix
 	];
+
+	services.xserver.enable = true;
+	services.xserver.displayManager.sddm = {
+		enable = true;
+		wayland.enable = true;
+	};
 
 	jovian.steam = {
 		enable = true;
 		user = "thomas";
-		autoStart = true;
+		#autoStart = true; # Can't return to gamescope-session from Hyprland
 		desktopSession = "hyprland";
 	};
 	jovian.devices.steamdeck.enable = true;
