@@ -5,6 +5,7 @@
 			./deck
 			inputs.disko.nixosModules.disko
 			inputs.jovian.nixosModules.jovian
+			inputs.aagl.nixosModules.default
 		];
 	};
 }

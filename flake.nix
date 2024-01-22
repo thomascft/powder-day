@@ -29,7 +29,7 @@
 				extraSpecialArgs = {inherit inputs;};
 
 				modules = [
-					./home/main.nix
+					./home
 				];	
 			};
 

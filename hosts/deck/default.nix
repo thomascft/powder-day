@@ -1,6 +1,7 @@
 {inputs, config, pkgs, ...}:{
 	imports = [
 		./hardware-configuration.nix
+		../../aagl.nix
 	];
 
 	boot.loader.systemd-boot.enable = true;
@@ -30,6 +31,7 @@
 	environment.systemPackages = with pkgs; [
 		git
 		neovim
+		helix
 		zellij
 		cachix
 	];
