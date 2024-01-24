@@ -6,6 +6,7 @@
 		./programs/wezterm
 		./programs/brave
 		./programs/discord
+		./programs/logseq
 		./programs/gaming
 	];
 
