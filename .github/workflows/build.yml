@@ -17,4 +17,4 @@ jobs:
           name: powder-day
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - name: "Build NixOS Configuration"
-      run: nix build .#nixosConfigurations.deck.config.system.build.toplevel
+      run: nix build .#nixosConfigurations.deck.config.system.build.toplevel; cachix push result
