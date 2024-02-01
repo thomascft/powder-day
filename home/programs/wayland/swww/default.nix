@@ -18,7 +18,7 @@
     };
 
     Service = {
-      ExecStart = "${pkgs.swww}/bin/swww init --no-daemon";
+      ExecStart = "${pkgs.swww}/bin/swww-daemon";
       ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
       Restart = "on-failure";
       KillMode = "mixed";
@@ -36,8 +36,8 @@
 	  };
 
 	  Service = {
-	    ExecStart = "${pkgs.swww}/bin/swww img /home/thomas/.dotfiles/wallpaper.png";
-	    ExecReload = "${pkgs.swww}/bin/swww img /home/thomas/.dotfiles/wallpaper.png";
+	    ExecStart = "${pkgs.swww}/bin/swww img /home/thomas/powder-day/wallpaper.png";
+	    ExecReload = "${pkgs.swww}/bin/swww img /home/thomas/powder-day/wallpaper.png";
 		Restart = "on-failure";
         KillMode = "mixed";
 	  };

@@ -25,7 +25,7 @@
 		settings = {
 			"$mod" = "SUPER";
 			
-			"$term" = "kitty";
+			"$term" = "wezterm";
 			"$runner" = "wofi --show drun";
 
 			monitor = [
@@ -34,6 +34,18 @@
 					"desc:LG Electronics LG HDR 4K 0x0001D796, highres, 0x0, 1"
 					"desc:Valve Corporation ANX7530 U 0x00000001, preferred, 3840x0, 1, transform, 3"
 			];
+
+			general = {
+				border_size = 2;
+				gaps_in = 8;
+				gaps_out = 16;
+				"col.active_border" = "rgb(a6e3a1)";
+				"col.inactive_border" = "rgb(313244)";
+			};
+
+			decoration = {
+				rounding = 8;
+			};
 
 			misc.force_default_wallpaper = 0;
 
@@ -45,6 +57,8 @@
 				"pin, title: ^( Picture in picture)$"
 				"stayfocused, title:^()$,class:^(steam)$"
 				"minsize 1 1, title:^()$,class:^(steam)$"
+
+				"workspace 5,class:^(genshinimpact.exe)$"
 			];
 
 			workspace = [
@@ -64,6 +78,13 @@
 			bind = [
 				"$mod, Return, exec, $term"
 				"$mod, Space, exec, $runner"
+
+				", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
+				", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
+				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+				# ", XF86AudioPrev, exec, "
+				# ", XF86AudioPlay, exec, "
+				# ", XF86AudioNext, exec, "
 
 				"$mod, f, fullscreen"
 

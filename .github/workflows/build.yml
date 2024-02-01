@@ -18,4 +18,4 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
           pathsToPush: result
     - name: "Build NixOS Configuration"
-      run: nix build .#nixosConfigurations.deck.config.system.build.toplevel -L
+      run: nix run github:Mic92/nix-fast-build -- --skip-cached --flake .#nixosConfigurations.deck.config.system.build.toplevel --debug

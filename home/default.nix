@@ -3,11 +3,14 @@
 	imports = [
 		./programs/wayland/hyprland
 		./programs/editors/helix
+		./programs/zellij
+		./programs/alacritty
 		./programs/wezterm
 		./programs/brave
 		./programs/discord
 		./programs/logseq
 		./programs/gaming
+		./fonts.nix
 	];
 
 	nixpkgs = {
