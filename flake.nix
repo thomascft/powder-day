@@ -12,7 +12,7 @@
 		disko.url = "github:nix-community/disko";
 		disko.inputs.nixpkgs.follows = "nixpkgs";
 
-		jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
+		jovian.url = "github:Jovian-Experiments/Jovian-NixOS/e2c026d8efea340d2a2dcc56775212979dd51ef2";
 		jovian.inputs.nixpkgs.follows = "nixpkgs";
 
 		aagl.url = "github:ezKEa/aagl-gtk-on-nix";
