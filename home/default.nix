@@ -3,8 +3,7 @@
 	imports = [
 		./programs/wayland/hyprland
 		./programs/editors/helix
-		./programs/zellij
-		./programs/alacritty
+		./programs/terminal
 		./programs/wezterm
 		./programs/brave
 		./programs/discord

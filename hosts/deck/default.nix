@@ -15,6 +15,7 @@
 	users.users.thomas = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" "networkmanager" ];
+		shell = pkgs.nushell;
 	};
 
 	programs.hyprland.enable = true;
