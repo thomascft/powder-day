@@ -23,10 +23,7 @@
 	home = {
 		username = "thomas";
 		homeDirectory = "/home/thomas";
-		packages = with pkgs; [
-			brave
-			steam
-		];
+		packages = with pkgs; [];
 	};
 
 	programs.home-manager.enable = true;
