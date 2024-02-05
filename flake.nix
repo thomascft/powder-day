@@ -16,7 +16,9 @@
 		jovian.inputs.nixpkgs.follows = "nixpkgs";
 
 		aagl.url = "github:ezKEa/aagl-gtk-on-nix";
-    		aagl.inputs.nixpkgs.follows = "nixpkgs";
+  	aagl.inputs.nixpkgs.follows = "nixpkgs";
+
+		spicetify-nix.url = "github:the-argus/spicetify-nix";
 	};
 	outputs = inputs@{ flake-parts, ...}: flake-parts.lib.mkFlake {inherit inputs;} {
 		imports = [

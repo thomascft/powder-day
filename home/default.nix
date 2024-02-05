@@ -6,6 +6,7 @@
 		./programs/terminal
 		./programs/wezterm
 		./programs/brave
+		./programs/spotify
 		./programs/discord
 		./programs/logseq
 		./programs/gaming
