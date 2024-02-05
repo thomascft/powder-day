@@ -46,7 +46,12 @@
         rounding = 8;
       };
 
-      misc.force_default_wallpaper = 0;
+      misc = {
+        force_default_wallpaper = 0;
+
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = true;
+      };
 
       input.follow_mouse = 1;
       input.mouse_refocus = false;
@@ -81,9 +86,9 @@
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
-        # ", XF86AudioPrev, exec, "
-        # ", XF86AudioPlay, exec, "
-        # ", XF86AudioNext, exec, "
+        ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
+        ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+        ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
 
         "$mod, f, fullscreen"
 
@@ -122,6 +127,22 @@
     };
   };
 
+  services.swayidle = {
+    enable = true;
+    systemdTarget = "hyprland-session.target";
+
+    timeouts = [
+      {
+        timeout = 300;
+        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+      }
+      {
+        timeout = 900;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+  };
+
   home.pointerCursor = {
     name = "Catppuccin-Mocha-Dark-Cursors";
     package = pkgs.catppuccin-cursors.mochaDark;
@@ -131,6 +152,6 @@
   home.packages = with pkgs; [
     wofi
     wl-clipboard
-    kitty
+    playerctl
   ];
 }

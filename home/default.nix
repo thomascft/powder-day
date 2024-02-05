@@ -12,6 +12,7 @@
     ./programs/wezterm
     ./programs/brave
     ./programs/spotify
+    ./programs/playerctl
     ./programs/discord
     ./programs/logseq
     ./programs/gaming
