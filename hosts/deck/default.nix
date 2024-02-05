@@ -1,61 +1,66 @@
-{inputs, config, pkgs, ...}:{
-	imports = [
-		./hardware-configuration.nix
-		../../aagl.nix
-	];
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    ../../aagl.nix
+  ];
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-	networking.hostName = "deck";
-	networking.networkmanager.enable = true;
+  networking.hostName = "deck";
+  networking.networkmanager.enable = true;
 
-	time.timeZone = "America/Denver";
+  time.timeZone = "America/Denver";
 
-	users.users.thomas = {
-		isNormalUser = true;
-		extraGroups = [ "wheel" "networkmanager" ];
-		shell = pkgs.nushell;
-	};
+  users.users.thomas = {
+    isNormalUser = true;
+    extraGroups = ["wheel" "networkmanager"];
+    shell = pkgs.nushell;
+  };
 
-	programs.hyprland.enable = true;
-	
-	nix = {
-		package = pkgs.nixFlakes;
-		extraOptions = ''
-			experimental-features = nix-command flakes
-		'';
-	};
+  programs.hyprland.enable = true;
 
-	nixpkgs.config.allowUnfree = true;
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
-	environment.systemPackages = with pkgs; [
-		git
-		neovim
-		helix
-		zellij
-		cachix
-	];
+  nixpkgs.config.allowUnfree = true;
 
-	services.xserver.enable = true;
-	services.xserver.displayManager.sddm = {
-		enable = true;
-		wayland.enable = true;
-	};
+  environment.systemPackages = with pkgs; [
+    git
+    neovim
+    helix
+    zellij
+    cachix
+  ];
 
-	jovian.steam = {
-		enable = true;
-		user = "thomas";
-		autoStart = false; # Can't return to gamescope-session from Hyprland
-		desktopSession = "hyprland";
-	};
-	jovian.decky-loader = {
-		enable = true;
-		user = "thomas";
-	};
-	jovian.devices.steamdeck.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
-	disko.devices = import ./disko.nix;
+  jovian.steam = {
+    enable = true;
+    user = "thomas";
+    autoStart = false; # Can't return to gamescope-session from Hyprland
+    desktopSession = "hyprland";
+  };
+  jovian.decky-loader = {
+    enable = true;
+    user = "thomas";
+  };
+  jovian.devices.steamdeck.enable = true;
 
-	system.stateVersion = "24.05";
+  disko.devices = import ./disko.nix;
+
+  system.stateVersion = "24.05";
 }

@@ -1,8 +1,8 @@
-{pkgs, ...}:{
-	programs.helix = {
-		enable = true;
-		settings = {
-			theme = "catppuccin_mocha";
-			};
-	};
+{pkgs, ...}: {
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "catppuccin_mocha";
+    };
+  };
 }

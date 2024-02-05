@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   imports = [
     ./shells/nushell.nix
     #./shells/bash.nix # Shell

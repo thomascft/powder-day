@@ -1,7 +1,13 @@
-{pkgs, lib, inputs, ...}:{ 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "spotify"
-  ];
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "spotify"
+    ];
 
   imports = [inputs.spicetify-nix.homeManagerModule];
 

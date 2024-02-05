@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   programs.wezterm = {
     enable = true;
     extraConfig = ''
@@ -13,11 +13,10 @@
         family = "Iosevka",
         style = "Italic",
       })
-      
+
       config.enable_tab_bar = false
-      
+
       return config
     '';
   };
-  
 }
