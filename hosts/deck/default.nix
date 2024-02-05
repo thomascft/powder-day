@@ -46,8 +46,12 @@
 	jovian.steam = {
 		enable = true;
 		user = "thomas";
-		#autoStart = true; # Can't return to gamescope-session from Hyprland
+		autoStart = false; # Can't return to gamescope-session from Hyprland
 		desktopSession = "hyprland";
+	};
+	jovian.decky-loader = {
+		enable = true;
+		user = "thomas";
 	};
 	jovian.devices.steamdeck.enable = true;
 
