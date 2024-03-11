@@ -15,6 +15,7 @@
       imports = [
         inputs.treefmt-nix.flakeModule
         ./hosts
+        ./home/profiles
       ];
       flake = {
       };
