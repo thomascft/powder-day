@@ -10,7 +10,7 @@
     specialArgs = {inherit inputs;};
     modules = [
       ./shared
-      ./gram
+      ./deck
     ];
   };
 }

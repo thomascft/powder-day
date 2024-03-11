@@ -1,6 +1,5 @@
 {pkgs, ...}: {
-  imports = [
-  ];
+  imports = [];
 
   time.timeZone = "America/Denver";
 
@@ -16,6 +15,7 @@
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
