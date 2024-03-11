@@ -1,9 +1,11 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
 
-    ./jovian.nix
+    ../../nixos/programs/hyprland.nix
+
+    # ./jovian.nix
   ];
 
   networking.hostName = "deck";

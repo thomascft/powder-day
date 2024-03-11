@@ -2,6 +2,8 @@
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
+
+    ../../nixos/programs/hyprland.nix
   ];
 
   networking.hostName = "gram";
