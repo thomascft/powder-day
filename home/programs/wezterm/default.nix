@@ -4,7 +4,7 @@
     extraConfig = ''
       local config = {}
 
-      if wezterm.config_builder()
+      if wezterm.config_builder() then
         config = wezterm.config_builder()
       end
 
