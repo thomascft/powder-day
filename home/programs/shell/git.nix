@@ -1,4 +1,4 @@
-{...}:{
+{...}: {
   programs.git = {
     enable = true;
     userEmail = "thomas.croft@proton.me";

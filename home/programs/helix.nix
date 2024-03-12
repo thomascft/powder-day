@@ -19,6 +19,5 @@
     extraPackages = with pkgs; [
       nil
     ];
-    
   };
 }
