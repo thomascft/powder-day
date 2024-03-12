@@ -38,7 +38,6 @@
           size = 12;
           passes = 3;
           ignore_opacity = true;
-          
         };
       };
 
@@ -53,14 +52,13 @@
       input.mouse_refocus = false;
 
       windowrulev2 = [
-
         # -- Fix odd behaviors in IntelliJ IDEs --
         # Fix focus issues when dialogs are opened or closed
         # "windowdance,class:^(jetbrains-.*)$,floating:1"
         # Fix splash screen showing in weird places and prevent annoying focus takeovers"
         "nofocus,class:^jetbrains-(?!toolbox),floating:1,title:^win\d+$"
         "noinitialfocus,class:^jetbrains-(?!toolbox),floating:1"
-        
+
         "center,class:^(jetbrains-.*)$,title:^(splash)$,floating:1"
         "nofocus,class:^(jetbrains-.*)$,title:^(splash)$,floating:1"
         "noborder,class:^(jetbrains-.*)$,title:^(splash)$,floating:1"
