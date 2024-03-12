@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ./disko.nix
 
-    ../../nixos/programs/hyprland.nix
+    ../../system/programs/hyprland.nix
   ];
 
   networking.hostName = "gram";
