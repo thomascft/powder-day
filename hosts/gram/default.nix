@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./disko.nix
 
+    ../../system/services/greetd.nix
     ../../system/programs/hyprland.nix
   ];
 
