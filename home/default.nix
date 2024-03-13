@@ -1,4 +1,7 @@
 {...}: {
+  imports = [
+    ./theme.nix
+  ];
   home = {
     username = "thomas";
     homeDirectory = "/home/thomas";
