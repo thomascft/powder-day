@@ -23,6 +23,8 @@
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
+  services.sshd.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixFlakes;

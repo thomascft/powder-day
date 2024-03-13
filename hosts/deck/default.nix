@@ -3,10 +3,9 @@
     ./hardware-configuration.nix
     ./disko.nix
 
-    ../../system/services/greetd.nix
     ../../system/programs/hyprland.nix
 
-    # ./jovian.nix
+    ./jovian.nix
   ];
 
   networking.hostName = "deck";
