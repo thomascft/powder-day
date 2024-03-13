@@ -10,8 +10,8 @@
 
       config.color_scheme = "catppuccin-mocha"
       config.font = wezterm.font({
-        family = "Iosevka",
-        style = "Italic",
+        family = "Fira Code",
+        style = "Normal",
       })
 
       config.enable_tab_bar = false
