@@ -29,6 +29,7 @@
   hardware.bluetooth.enable = true;
 
   services.sshd.enable = true;
+  services.tailscale.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nix = {
