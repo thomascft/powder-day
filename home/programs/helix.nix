@@ -9,10 +9,10 @@
           render = true;
         };
       };
-       theme = "catppuccin_override";
+      theme = "catppuccin_override";
     };
     themes.catppuccin_override = {
-     "inherits" = "catppuccin_mocha";
+      "inherits" = "catppuccin_mocha";
       "ui.background" = "none";
     };
 
