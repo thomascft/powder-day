@@ -1,5 +1,7 @@
-{pkgs, ...}: {
-  imports = [];
+{inputs, pkgs, lib, ...}: {
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
 
   time.timeZone = "America/Denver";
 
@@ -9,8 +11,14 @@
     shell = pkgs.nushell;
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+    loader.systemd-boot.enable = lib.mkForce false;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
@@ -26,5 +34,6 @@
     git
     helix
     zellij
+    sbctl # FIXME for temporary use with lanzaboote
   ];
 }
