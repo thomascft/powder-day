@@ -1,5 +1,11 @@
-{pkgs, ...}: {
-  imports = [];
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}: {
+  imports = [
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -100,6 +106,8 @@
         ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s +5%"
         ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 5%-"
 
+        "$mod Escape,, exec, ${pkgs.systemd}/bin/loginctl lock-session"
+
         "$mod, f, fullscreen"
 
         "$mod, w, killactive"
@@ -135,19 +143,6 @@
         "$mod SHIFT, 0, movetoworkspace, 10"
       ];
     };
-  };
-
-  services.swayidle = {
-    enable = true;
-    systemdTarget = "hyprland-session.target";
-
-    timeouts = [
-      {
-        timeout = 300;
-        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-        # Turn monitor auto-input-switch off or the screen will wake up immediately
-      }
-    ];
   };
 
   home.pointerCursor = {
