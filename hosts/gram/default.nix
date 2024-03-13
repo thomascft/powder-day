@@ -7,6 +7,7 @@
     ../../system/programs/hyprland.nix
     ../../system/services/upower.nix
     ../../system/services/tlp.nix
+    ../../system/lanzaboote.nix
   ];
 
   networking.hostName = "gram";
