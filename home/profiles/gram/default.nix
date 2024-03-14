@@ -5,5 +5,6 @@
     ../../programs/brave.nix
     ../../programs/wayland
     ../../programs/logseq.nix
+    ../../programs/spicetify.nix
   ];
 }
