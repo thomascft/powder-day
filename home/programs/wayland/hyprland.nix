@@ -106,7 +106,7 @@
         ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s +5%"
         ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 5%-"
 
-        "$mod Escape,, exec, ${pkgs.systemd}/bin/loginctl lock-session"
+        "$mod, Escape, exec, ${pkgs.systemd}/bin/loginctl lock-session"
 
         "$mod, f, fullscreen"
 
