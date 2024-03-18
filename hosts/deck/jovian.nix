@@ -10,7 +10,7 @@
   jovian.steam = {
     enable = true;
     user = "thomas";
-    desktopSession = "Hyprland";
+    desktopSession = "hyprland";
     autoStart = true;
   };
   jovian.devices.steamdeck.enable = true;
