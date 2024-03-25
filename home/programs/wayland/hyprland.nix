@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    inputs.hyprland.homeManagerModules.default
   ];
 
   wayland.windowManager.hyprland = {
@@ -13,7 +14,7 @@
     settings = {
       "$mod" = "SUPER";
 
-      "$term" = "wezterm";
+      "$term" = "alacritty";
       "$runner" = "anyrun";
 
       exec-once = [
@@ -29,11 +30,11 @@
       ];
 
       general = {
-        border_size = 0;
+        border_size = 4;
         gaps_in = 10;
         gaps_out = 20;
-        "col.active_border" = "rgb(cdd6f4)";
-        "col.inactive_border" = "rgb(1e1e2e)";
+        "col.active_border" = "rgb(a6e3a1)";
+        "col.inactive_border" = "rgb(11111b)";
       };
 
       decoration = {
@@ -41,7 +42,7 @@
 
         shadow_render_power = 2;
         shadow_range = 16;
-        "col.shadow" = "rgba(6c70864d)";
+        "col.shadow" = "rgba(11111b4d)";
 
         blur = {
           enabled = "yes";

@@ -5,6 +5,12 @@
     anyrun.url = "github:Kirottu/anyrun";
     anyrun.inputs.nixpkgs.follows = "nixpkgs";
 
+    hyprland.url = "github:hyprwm/Hyprland";
+    # Don't override hyprland nixpkgs
+        
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
+
     hypridle.url = "github:hyprwm/hypridle";
     hypridle.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -34,9 +40,9 @@
         inputs.treefmt-nix.flakeModule
         ./hosts
         ./home/profiles
+        ./modules
       ];
-      flake = {
-      };
+      flake = {};
       systems = [
         "x86_64-linux"
       ];

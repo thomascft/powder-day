@@ -2,8 +2,9 @@
   imports = [
     ./hyprland.nix
     ./hyprlock.nix
+    ./waybar
     ../anyrun
-    ../wezterm
+    ../alacritty.nix
     ../../services/wayland
   ];
 }
