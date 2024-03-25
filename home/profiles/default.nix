@@ -1,7 +1,7 @@
-{inputs, ...}: {
+{inputs, self, ...}: {
   flake.homeConfigurations = let
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs self;};
   in {
     "thomas@deck" = inputs.home-manager.lib.homeManagerConfiguration {
       modules = [

@@ -27,6 +27,7 @@
     jovian.inputs.nixpkgs.follows = "nixpkgs";
 
     disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -40,9 +41,10 @@
         inputs.treefmt-nix.flakeModule
         ./hosts
         ./home/profiles
-        ./modules
       ];
-      flake = {};
+      flake = {self, ...}:{
+        homeManagerModules.theme = import ./modules/home/theme.nix;
+      };
       systems = [
         "x86_64-linux"
       ];

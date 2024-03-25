@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, config, ...}: {
   imports = [
     inputs.hyprlock.homeManagerModules.default
   ];
@@ -16,7 +16,7 @@
     ];
     backgrounds = [
       {
-        path = "~/powder-day/wallpaper.png";
+        path = "${config.theme.wallpaper}";
 
         blur_passes = 3;
         blur_size = 12;

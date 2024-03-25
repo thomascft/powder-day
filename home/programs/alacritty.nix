@@ -18,8 +18,8 @@
       };
       font = {
         normal = {
-          family = config.theme.family; #"Maple Mono NF";
-          style = config.theme.style; # "Italic";
+          family = config.theme.font.family;
+          style = config.theme.font.style;
         };
       };
     };

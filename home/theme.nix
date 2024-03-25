@@ -1,15 +1,15 @@
 {self, pkgs, ...}: {
   imports = [
+    # ../modules/home/theme.nix
     self.homeManagerModules.theme
   ];
 
   theme = {
     colorscheme = {
       name = "catppuccin";
-      variant = "mocha";
+      variant.dark = "mocha";
     };
     font = {
-      package = pkgs.maple-mono-NF;
       family = "Maple Mono NF";
       style = "Italic";
     };

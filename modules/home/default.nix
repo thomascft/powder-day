@@ -1,3 +1,5 @@
 {...}:{
-    theme = import ./theme.nix;
+    flake.homeManagerModules = {
+        theme = import ./theme.nix;
+    };
 }

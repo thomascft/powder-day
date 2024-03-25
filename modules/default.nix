@@ -1,3 +1,5 @@
-{...}:{
-  flake.homeManagerModules = import ./home;
+{
+  imports = [
+    ./home
+  ];
 }

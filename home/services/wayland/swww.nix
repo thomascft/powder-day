@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   home.packages = with pkgs; [
     swww
   ];
@@ -30,8 +30,8 @@
       };
 
       Service = {
-        ExecStart = "${pkgs.swww}/bin/swww img /home/thomas/powder-day/wallpaper.png";
-        ExecReload = "${pkgs.swww}/bin/swww img /home/thomas/powder-day/wallpaper.png";
+        ExecStart = "${pkgs.swww}/bin/swww img ${config.theme.wallpaper}";
+        ExecReload = "${pkgs.swww}/bin/swww img ${config.theme.wallpaper}";
         Restart = "on-failure";
         KillMode = "mixed";
       };
