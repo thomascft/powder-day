@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
+    ./nvidia.nix
 
     ../../system/services/greetd.nix
     ../../system/programs/hyprland.nix
