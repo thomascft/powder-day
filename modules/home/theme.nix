@@ -1,4 +1,4 @@
-{lib, ...}:{
+{lib, ...}: {
   options.theme = {
     colorscheme = {
       name = lib.mkOption {
@@ -16,7 +16,7 @@
     font = {
       family = lib.mkOption {
         type = lib.types.str;
-      }; 
+      };
       style = lib.mkOption {
         type = lib.types.str;
       };

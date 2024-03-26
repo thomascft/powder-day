@@ -1,4 +1,8 @@
-{self, pkgs, ...}: {
+{
+  self,
+  pkgs,
+  ...
+}: {
   imports = [
     # ../modules/home/theme.nix
     self.homeManagerModules.theme
@@ -15,7 +19,7 @@
     };
     wallpaper = ../wallpaper.png;
   };
-  
+
   gtk = {
     enable = true;
     theme = {

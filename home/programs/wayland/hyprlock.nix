@@ -1,11 +1,15 @@
-{inputs, config, ...}: {
+{
+  inputs,
+  config,
+  ...
+}: {
   imports = [
     inputs.hyprlock.homeManagerModules.default
   ];
 
   programs.hyprlock = {
     enable = true;
-    labels = [];  
+    labels = [];
     input-fields = [
       {
         fade_on_empty = false;

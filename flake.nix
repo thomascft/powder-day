@@ -7,7 +7,7 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     # Don't override hyprland nixpkgs
-        
+
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
@@ -42,7 +42,7 @@
         ./hosts
         ./home/profiles
       ];
-      flake = {self, ...}:{
+      flake = {self, ...}: {
         homeManagerModules.theme = import ./modules/home/theme.nix;
       };
       systems = [

@@ -1,5 +1,5 @@
-{...}:{
-   programs.waybar = {
+{...}: {
+  programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
@@ -7,8 +7,8 @@
         position = "top";
         height = 40;
         margin = "20px 20px 0px 20px";
-        modules-left = [ "hyprland/workspaces"];
-        modules-center = [ "hyprland/window" ];
+        modules-left = ["hyprland/workspaces"];
+        modules-center = ["hyprland/window"];
         modules-right = ["upower" "clock"];
 
         "hyprland/workspaces" = {};
