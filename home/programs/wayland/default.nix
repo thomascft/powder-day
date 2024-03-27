@@ -4,7 +4,5 @@
     ./hyprlock.nix
     ./waybar
     ../anyrun
-    ../alacritty.nix
-    ../../services/wayland
   ];
 }

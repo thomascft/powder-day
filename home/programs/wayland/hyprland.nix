@@ -14,8 +14,8 @@
     settings = {
       "$mod" = "SUPER";
 
-      "$term" = "alacritty";
-      "$runner" = "anyrun";
+      "$term" = "${config.programs.wezterm.package}/bin/wezterm";
+      "$runner" = "${config.programs.anyrun.package}/bin/anyrun";
 
       exec-once = [
         "${config.programs.hyprlock.package}/bin/hyprlock"

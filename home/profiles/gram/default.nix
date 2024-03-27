@@ -1,7 +1,13 @@
 {...}: {
   imports = [
+  
+    ../../services/wayland
+    
     ../../programs/helix.nix
-    ../../programs/shell
+    
+    ../../terminal/shell
+    ../../terminal/emulators/wezterm
+    
     ../../programs/brave.nix
     ../../programs/wayland
     ../../programs/logseq.nix

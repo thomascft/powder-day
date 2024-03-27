@@ -14,6 +14,14 @@
 
   programs.starship = {
     enable = true;
+    settings = {
+      format = ''
+        [](fg:green)[](bold fg:black bg:green)[](fg:green)
+      '';
+      character = {
+        success_symbol = "";
+      };
+    };
   };
 
   programs.carapace = {

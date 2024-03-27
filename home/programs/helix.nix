@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{config, lib, pkgs, ...}: let 
+  colorscheme = lib.concatStrings (with config.theme.colorscheme; [name "_" variant.dark]);
+in {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -12,7 +14,7 @@
       theme = "catppuccin_override";
     };
     themes.catppuccin_override = {
-      "inherits" = "catppuccin_mocha";
+      "inherits" = "${colorscheme}";
       "ui.background" = "none";
     };
 

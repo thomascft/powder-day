@@ -18,6 +18,7 @@ in {
         };
       };
       font = {
+        size = 12;
         normal = {
           family = config.theme.font.family;
           style = config.theme.font.style;
