@@ -1,5 +1,9 @@
-{config, lib, ...}:{
-  programs.kitty= {
+{
+  config,
+  lib,
+  ...
+}: {
+  programs.kitty = {
     enable = true;
     theme = config.theme.colorscheme.name;
 

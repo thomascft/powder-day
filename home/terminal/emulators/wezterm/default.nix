@@ -1,9 +1,14 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: let
+  colorscheme =
+    lib.concatStrings (with config.theme.colorscheme; [name "-" variant.dark]);
+in {
   programs.wezterm = {
     enable = true;
-    extraConfig = let colorscheme =  
-      lib.concatStrings (with config.theme.colorscheme; [name "-" variant.dark]);
-      in ''
+    extraConfig = ''
       local config = {}
 
       if wezterm.config_builder() then

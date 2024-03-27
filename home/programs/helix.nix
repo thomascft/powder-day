@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}: let 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   colorscheme = lib.concatStrings (with config.theme.colorscheme; [name "_" variant.dark]);
 in {
   programs.helix = {
