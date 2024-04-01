@@ -1,7 +1,5 @@
 {...}: {
-  imports = [
-    ./git.nix
-  ];
+  imports = [];
 
   programs.nushell = {
     enable = true;

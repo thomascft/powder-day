@@ -5,6 +5,7 @@
     ../../programs/helix.nix
 
     ../../terminal/shell
+    ../../terminal/programs
     ../../terminal/emulators/wezterm
     ../../terminal/emulators/kitty.nix
 

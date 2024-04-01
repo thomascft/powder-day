@@ -1,7 +1,8 @@
 {...}: {
   imports = [
     ../../programs/helix.nix
-    ../../programs/shell
+    ../../terminal/shell
+    ../../terminal/programs
     ../../programs/brave.nix
     ../../programs/wayland
   ];
