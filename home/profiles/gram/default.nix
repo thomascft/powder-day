@@ -6,6 +6,7 @@
 
     ../../terminal/shell
     ../../terminal/emulators/wezterm
+    ../../terminal/emulators/kitty.nix
 
     ../../programs/brave.nix
     ../../programs/wayland
