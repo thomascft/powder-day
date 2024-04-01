@@ -23,7 +23,7 @@
       directory = {
         format = "[](fg:green)[$path](bold fg:black bg:green)[](fg:green)";
       };
-    };  
+    };
   };
 
   programs.carapace = {
