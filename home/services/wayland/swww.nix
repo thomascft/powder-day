@@ -16,7 +16,7 @@
       };
 
       Service = {
-        ExecStart = "${pkgs.swww}/bin/swww-daemon";
+        ExecStart = "${pkgs.swww}/bin/swww-daemon -f xrgb";
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
         Restart = "on-failure";
         KillMode = "mixed";
