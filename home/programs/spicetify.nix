@@ -3,7 +3,9 @@
   lib,
   inputs,
   ...
-}: {
+}: let 
+  spicePkgs = inputs.spicetify-nix.packages.x86_64-linux.default;
+  in {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "spotify"
@@ -13,7 +15,11 @@
 
   programs.spicetify = {
     enable = true;
-    theme = inputs.spicetify-nix.packages.x86_64-linux.default.themes.catppuccin;
+    theme = spicePkgs.themes.catppuccin;
     colorScheme = "mocha";
+    enabledExtensions = with spicePkgs.extensions; [
+      lastfm
+      adblock
+    ];
   };
 }
