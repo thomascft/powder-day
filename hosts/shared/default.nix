@@ -25,6 +25,7 @@
 
   services.sshd.enable = true;
   services.tailscale.enable = true;
+  services.udisks2.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nix = {
