@@ -3,9 +3,9 @@
   lib,
   inputs,
   ...
-}: let 
+}: let
   spicePkgs = inputs.spicetify-nix.packages.x86_64-linux.default;
-  in {
+in {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "spotify"
