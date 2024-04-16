@@ -4,7 +4,7 @@
 
     ../../programs/helix.nix
 
-    ../../terminal/shell
+    ../../terminal/shells/nushell
     ../../terminal/programs
     ../../terminal/emulators/wezterm
     ../../terminal/emulators/kitty.nix
