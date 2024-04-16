@@ -6,6 +6,9 @@
     extraConfig = ''
       $env.config = {
         show_banner: false,
+        completions: {
+          algorithm: "fuzzy"
+        }
       }
     '';
   };
