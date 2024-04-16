@@ -9,6 +9,7 @@
     ../../system/services/upower.nix
     ../../system/services/tlp.nix
     ../../system/services/sound.nix
+    ../../system/services/syncthing.nix
     ../../system/lanzaboote.nix
   ];
 
