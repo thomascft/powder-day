@@ -6,6 +6,7 @@
 
     ../../system/services/greetd.nix
     ../../system/programs/hyprland.nix
+    ../../system/programs/steam.nix
     ../../system/services/upower.nix
     ../../system/services/tlp.nix
     ../../system/services/sound.nix

@@ -14,5 +14,6 @@
     ../../programs/logseq.nix
     ../../programs/spicetify.nix
     ../../programs/webcord.nix
+    ../../programs/gaming.nix
   ];
 }
