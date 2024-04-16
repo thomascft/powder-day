@@ -14,7 +14,7 @@
     settings = {
       "$mod" = "SUPER";
 
-      "$term" = "${config.programs.wezterm.package}/bin/wezterm";
+      "$term" = "${config.programs.kitty.package}/bin/kitty";
       "$runner" = "${config.programs.anyrun.package}/bin/anyrun";
 
       exec-once = [
@@ -112,6 +112,8 @@
         ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
         ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s +5%"
         ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 5%-"
+        ", Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m output -o ~/Pictures/screenshots"
+        "SHIFT, Print, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o ~/Pictures/screenshots"
 
         "$mod, Escape, exec, ${pkgs.systemd}/bin/loginctl lock-session"
 
