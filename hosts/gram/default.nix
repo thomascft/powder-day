@@ -11,7 +11,7 @@
     ../../system/services/tlp.nix
     ../../system/services/sound.nix
     ../../system/services/syncthing.nix
-    ../../system/lanzaboote.nix
+    # ../../system/lanzaboote.nix # Not adding boot entries
   ];
 
   networking.hostName = "gram";
