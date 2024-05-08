@@ -24,6 +24,8 @@ in {
     };
 
     extraPackages = with pkgs; [
+      rust-analyzer
+      clang-tools
       nil
     ];
   };
