@@ -83,7 +83,7 @@
 
         "workspace 5,class:^(genshinimpact.exe)$"
 
-        "opacity 0.8 override 0.8 override,class:(Logseq)"
+        # "opacity 0.8 override 0.8 override,class:(Logseq)"
       ];
 
       workspace = [
