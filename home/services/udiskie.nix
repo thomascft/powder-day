@@ -1,5 +1,5 @@
 {...}:{
-  programs.udiskie = {
+  services.udiskie = {
     enable = true;
   };
 }
