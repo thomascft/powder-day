@@ -14,7 +14,7 @@
       variant.dark = "mocha";
     };
     font = {
-      family = "Maple Mono NF";
+      family = "JetBrains Mono";
       style = "Italic";
     };
     wallpaper = ../wallpaper.png;
@@ -38,5 +38,7 @@
     maple-mono-NF
     fira-code
     noto-fonts
+    jetbrains-mono
+    cozette
   ];
 }

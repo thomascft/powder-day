@@ -12,6 +12,8 @@ in {
     settings = {
       editor = {
         cursorline = true;
+        color-modes = true;
+        popup-border = "menu";
         indent-guides = {
           render = true;
         };
