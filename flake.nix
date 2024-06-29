@@ -3,11 +3,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     anyrun.url = "github:Kirottu/anyrun";
-    anyrun.inputs.nixpkgs.follows = "nixpkgs";
+    # anyrun.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
     # Don't override hyprland nixpkgs
+
+    wezterm-git.url = "github:wez/wezterm/552bb1d66b6d0102961974c0da22dc7c69b0cd30?dir=nix";
 
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";

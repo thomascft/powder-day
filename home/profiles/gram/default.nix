@@ -12,7 +12,7 @@
 
     ../../programs/brave.nix
     ../../programs/wayland
-    ../../programs/logseq.nix
+    # ../../programs/logseq.nix
     ../../programs/spicetify.nix
     ../../programs/webcord.nix
     ../../programs/gaming.nix
