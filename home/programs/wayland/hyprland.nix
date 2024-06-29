@@ -101,7 +101,7 @@
       ];
 
       bind = [
-        "$mod, Return, exec, [float;tile] wezterm start --always-new-process"
+        "$mod, Return, exec, wezterm start"
         "$mod, Space, exec, $runner"
 
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
