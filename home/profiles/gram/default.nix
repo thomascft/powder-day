@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ../../services/wayland
-    ../../services/udiskie.nix
 
     ../../programs/helix.nix
 
