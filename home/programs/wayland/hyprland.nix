@@ -31,10 +31,10 @@
 
       general = {
         border_size = 4;
-        gaps_in = 10;
-        gaps_out = 20;
-        "col.active_border" = "rgb(a6e3a1)";
-        "col.inactive_border" = "rgb(11111b)";
+        gaps_in = 15;
+        gaps_out = 30;
+        "col.active_border" = "rgb(585b70)";
+        "col.inactive_border" = "rgb(313244)";
       };
 
       decoration = {
@@ -55,8 +55,6 @@
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-        # force_default_wallpaper = 0;
-
         mouse_move_enables_dpms = true;
         key_press_enables_dpms = true;
       };
@@ -80,10 +78,6 @@
         "pin, title: ^( Picture in picture)$"
         "stayfocused, title:^()$,class:^(steam)$"
         "minsize 1 1, title:^()$,class:^(steam)$"
-
-        "workspace 5,class:^(genshinimpact.exe)$"
-
-        # "opacity 0.8 override 0.8 override,class:(Logseq)"
       ];
 
       workspace = [
