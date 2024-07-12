@@ -33,28 +33,26 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [
-        inputs.treefmt-nix.flakeModule
-        ./hosts
-        ./home/profiles
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
+    homeManagerModules.theme = import ./modules/home/theme.nix;
+    nixosConfigurations.gram = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/gram
       ];
-      flake = {self, ...}: {
-        homeManagerModules.theme = import ./modules/home/theme.nix;
-      };
-      systems = [
-        "x86_64-linux"
-      ];
-      perSystem = {config, ...}: {
-        treefmt = {
-          projectRootFile = "flake.nix";
-          programs.alejandra.enable = true;
-        };
-      };
     };
+    homeConfigurations."thomas@gram" = home-manager.lib.homeConfiguration {
+      extraSpecialArgs = {inherit inputs self;};
+      modules = [
+        ./home/default.nix
+      ];
+    };
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+  };
 }

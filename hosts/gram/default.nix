@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ../shared
     ./hardware-configuration.nix
     ./disko.nix
     ./nvidia.nix
