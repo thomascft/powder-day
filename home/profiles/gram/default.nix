@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ../../.
     ../../services/wayland
 
     ../../programs/helix.nix

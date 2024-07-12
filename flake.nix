@@ -47,10 +47,11 @@
         ./hosts/gram
       ];
     };
-    homeConfigurations."thomas@gram" = home-manager.lib.homeConfiguration {
+    homeConfigurations."thomas@gram" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = {inherit inputs self;};
       modules = [
-        ./home/default.nix
+        ./home/profiles/gram
       ];
     };
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
