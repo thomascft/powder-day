@@ -12,5 +12,15 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
+  services.greetd = {
+    enable = true;
+    settings = {
+       default_session = {
+        command = "Hyprland";
+        user = "thomas";
+      };
+    };
+  };
+  
   security.pam.services.hyprlock.text = "auth include login";
 }
