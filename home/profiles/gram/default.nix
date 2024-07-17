@@ -1,7 +1,7 @@
 {...}: {
   imports = [
-    ../../.
-    ../../services/wayland
+    ../../. # home/default.nix
+    ../../hyprland
 
     ../../programs/helix.nix
 
@@ -11,7 +11,6 @@
     ../../terminal/emulators/kitty.nix
 
     ../../programs/brave.nix
-    ../../programs/wayland
     # ../../programs/logseq.nix
     ../../programs/spicetify.nix
     ../../programs/webcord.nix

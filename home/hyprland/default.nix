@@ -6,6 +6,10 @@
 }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
+
+    ./anyrun    
+    ./hyprlock.nix
+    ./services.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -147,6 +151,7 @@
       ];
     };
   };
+
 
   home.pointerCursor = {
     name = "Catppuccin-Mocha-Dark-Cursors";
