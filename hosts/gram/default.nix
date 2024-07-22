@@ -25,10 +25,10 @@
   hardware.bluetooth.enable = true;
 
   services.syncthing = {
-      enable = true;
-      user = "thomas";
-      dataDir = "/home/thomas/Documents/sync";
-      configDir = "/home/thomas/Documents/sync/.config/syncthing";
+    enable = true;
+    user = "thomas";
+    dataDir = "/home/thomas/Documents/sync";
+    configDir = "/home/thomas/Documents/sync/.config/syncthing";
   };
   services.sshd.enable = true;
   services.tailscale.enable = true;

@@ -15,12 +15,12 @@
   services.greetd = {
     enable = true;
     settings = {
-       default_session = {
+      default_session = {
         command = "Hyprland";
         user = "thomas";
       };
     };
   };
-  
+
   security.pam.services.hyprlock.text = "auth include login";
 }

@@ -7,7 +7,7 @@
   imports = [
     inputs.hyprland.homeManagerModules.default
 
-    ./anyrun    
+    ./anyrun
     ./hyprlock.nix
     ./services.nix
   ];
@@ -151,7 +151,6 @@
       ];
     };
   };
-
 
   home.pointerCursor = {
     name = "Catppuccin-Mocha-Dark-Cursors";
