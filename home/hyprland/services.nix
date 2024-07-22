@@ -1,17 +1,21 @@
-{config, pkgs, ...}:{
-  
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.hyprpaper = {
     enable = true;
     settings = {
       splash = false;
-      preload = [ "${config.theme.wallpaper}" ];
+      preload = ["${config.theme.wallpaper}"];
       wallpaper = [
         "eDP-1,${config.theme.wallpaper}"
         "DP-1,${config.theme.wallpaper}"
       ];
     };
-  }; 
-services.hypridle = {
+  };
+
+  services.hypridle = {
     enable = true;
     settings = {
       general = {
@@ -21,12 +25,21 @@ services.hypridle = {
       listener = [
         {
           timeout = 150;
-          onTimeout = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10";
-          onResume = "${pkgs.brightnessctl}/bin/brightnessctl -r";
+          on-timeout = "${pkgs.brightnessctl}/bin/brightnessctl -s set 10";
+          on-resume = "${pkgs.brightnessctl}/bin/brightnessctl -r";
         }
         {
           timeout = 300;
-          onTimeout = "${pkgs.systemd}/bin/loginctl lock-session";
+          on-timeout = "${pkgs.systemd}/bin/loginctl lock-session";
+        }
+        {
+          timeout = 330;
+          on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+          on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 600;
+          on-timout = "${pkgs.systemd}/bin/systemctl suspend";
         }
       ];
     };
