@@ -29,6 +29,7 @@ in {
       rust-analyzer
       clang-tools
       nil
+      marksman
     ];
   };
 }
