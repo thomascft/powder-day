@@ -28,9 +28,9 @@
       monitor = [
         ",preferred,auto,auto"
 
-        "desc:LG Electronics LG HDR 4K 0x0001D796, highres, 0x0, 1"
+        "desc:LG Display 0x075B, preferred, 0x0, 1"
+        "desc:LG Electronics LG HDR 4K 0x0001D796, preferred, 2560x0, 1"
         "desc:HP Inc. HP Z24n G2 6CM9171S6F, preferred, 1920x-400, 1"
-        "desc:Valve Corporation ANX7530 U 0x00000001, preferred, 3840x0, 1, transform, 3"
       ];
 
       general = {
@@ -122,33 +122,26 @@
         "$mod, s, togglefloating"
         "$mod, p, pin"
 
+        "$mod CTRL SHIFT, h, movecurrentworkspacetomonitor, -1"
+        "$mod CTRL SHIFT, l, movecurrentworkspacetomonitor, +1"
+
         "$mod, h, movefocus, l"
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
-
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
-
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod SHIFT, 6, movetoworkspace, 6"
-        "$mod SHIFT, 7, movetoworkspace, 7"
-        "$mod SHIFT, 8, movetoworkspace, 8"
-        "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 10"
-      ];
+     ] + (
+      builtins.concatLists (builtins.genList (
+        x: let
+          ws = let
+            c = (x + 1) / 10;
+          in
+            builtins.toString (x +1 - (c * 10));
+        in [
+          "$mod, ${ws}, workspace, ${toString (x + 1)}"
+          "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+        ]
+      ))
+    );
     };
   };
 
