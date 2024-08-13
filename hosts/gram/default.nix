@@ -17,8 +17,15 @@
   };
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    blacklistedKernelModules = ["int3403_thermal"]; # Stops ACPI log spam
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+
+    resumeDevice = "/dev/nvme0n1p2";
+    kernelParams = [
+      "resume_offset=533760"
+    ];
   };
 
   networking.networkmanager.enable = true;
@@ -30,10 +37,15 @@
     dataDir = "/home/thomas/Documents/sync";
     configDir = "/home/thomas/Documents/sync/.config/syncthing";
   };
+  services.thermald.enable = true;
+  services.fwupd.enable = true;
   services.sshd.enable = true;
   services.tailscale.enable = true;
-  services.upower.enable = true;
   services.tlp.enable = true;
+  services.upower = {
+    enable = true;
+    criticalPowerAction = "Hibernate";
+  };
 
   nixpkgs.config.allowUnfree = true;
   nix = {
