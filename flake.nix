@@ -19,7 +19,7 @@
     hyprlock.url = "github:hyprwm/hyprlock";
     hyprlock.inputs.nixpkgs.follows = "nixpkgs";
 
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     lanzaboote.url = "github:nix-community/lanzaboote/v0.3.0";
