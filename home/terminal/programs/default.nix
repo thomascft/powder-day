@@ -10,5 +10,6 @@
     gdb
     ripgrep
     unzip
+    glow
   ];
 }
