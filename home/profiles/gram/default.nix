@@ -10,6 +10,7 @@
     ../../terminal/emulators/wezterm
     ../../terminal/emulators/kitty.nix
 
+    ../../programs/firefox
     ../../programs/brave.nix
     # ../../programs/logseq.nix
     ../../programs/spicetify.nix
