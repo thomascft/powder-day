@@ -8,7 +8,7 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # Don't override hyprland nixpkgs
 
-    wezterm-git.url = "github:wez/wezterm/552bb1d66b6d0102961974c0da22dc7c69b0cd30?dir=nix";
+    wezterm-nightly.url = "github:thomascft/wezterm-nightly-flake";
 
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";

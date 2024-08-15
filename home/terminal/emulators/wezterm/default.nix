@@ -9,7 +9,7 @@
 in {
   programs.wezterm = {
     enable = true;
-    package = inputs.wezterm-git.packages.x86_64-linux.default;
+    package = inputs.wezterm-nightly.packages.x86_64-linux.default;
     extraConfig = ''
       local config = {}
 
