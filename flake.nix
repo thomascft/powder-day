@@ -5,7 +5,7 @@
     anyrun.url = "github:Kirottu/anyrun";
     # anyrun.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
     # Don't override hyprland nixpkgs
 
     wezterm-nightly.url = "github:thomascft/wezterm-nightly-flake";
