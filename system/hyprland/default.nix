@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   pkgs,
   ...
 }: {
@@ -16,7 +17,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "Hyprland";
+        command = "${config.programs.hyprland.package}/bin/Hyprland";
         user = "thomas";
       };
     };

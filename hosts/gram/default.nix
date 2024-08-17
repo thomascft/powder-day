@@ -48,6 +48,13 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+        (self: super: {
+      vulkan-validation-layers = super.vulkan-validation-layers.overrideAttrs (oldAttrs: {
+        buildInputs = oldAttrs.buildInputs ++ [pkgs.spirv-tools];
+      });
+    })
+  ];
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";

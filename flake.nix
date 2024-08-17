@@ -1,11 +1,11 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/6badbad9f0925bd35e8ca64b4c14b85b1d8fcbb3";
+    nixpkgs.url = "github:nixos/nixpkgs/?ref=nixpkgs-unstable";
 
     anyrun.url = "github:Kirottu/anyrun";
     # anyrun.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.2";
     # Don't override hyprland nixpkgs
 
     wezterm-nightly.url = "github:thomascft/wezterm-nightly-flake";
