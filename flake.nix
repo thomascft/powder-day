@@ -44,7 +44,7 @@
     nixosConfigurations.gram = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/gram
+        ./system/hosts/gram
       ];
     };
     homeConfigurations."thomas@gram" = home-manager.lib.homeManagerConfiguration {
@@ -54,6 +54,7 @@
         ./home/profiles/gram
       ];
     };
+
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }

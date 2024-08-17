@@ -6,7 +6,7 @@
 }: {
   environment.variables.NIXOS_OZONE_WL = "true";
   programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  # programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];

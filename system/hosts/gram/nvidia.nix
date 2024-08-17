@@ -1,26 +1,28 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, lib, pkgs, ...}:{
   hardware.graphics = {
     enable = true;
-    # driSupport = true;
-    enable32Bit = true;
     extraPackages = with pkgs; [nvidia-vaapi-driver];
   };
   services.xserver.videoDrivers = ["nvidia"];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+  ];
 
   environment.systemPackages = with pkgs; [
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
   ];
-
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    powerManagement.enable = true; # Experimental may interfere with suspend
+    powerManagement.finegrained = true;
+
+    open = false;
+
     prime = {
       offload = {
         enable = true;
