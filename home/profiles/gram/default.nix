@@ -16,6 +16,6 @@
     ../../programs/spicetify.nix
     ../../programs/webcord.nix
     ../../programs/gaming.nix
-    ../../programs/android-studio.nix
+    # ../../programs/android-studio.nix
   ];
 }

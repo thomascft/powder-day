@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{home-manager, pkgs, ...}:{
  imports = [
     ./hardware-configuration.nix
     ./disko.nix
@@ -8,10 +8,6 @@
     ../../hyprland
   ];
 
-  # services.desktopManager.plasma6 = {
-  #   enable = true;
-  # };
-
   time.timeZone = "America/Denver";
 
   users.users.thomas = {
@@ -19,6 +15,7 @@
     extraGroups = ["wheel" "networkmanager"];
     shell = pkgs.nushell;
   };
+
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;

@@ -5,11 +5,6 @@
   };
   services.xserver.videoDrivers = ["nvidia"];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "nvidia-x11"
-    "nvidia-settings"
-  ];
-
   environment.systemPackages = with pkgs; [
     vulkan-loader
     vulkan-validation-layers

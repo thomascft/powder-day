@@ -42,18 +42,25 @@
   }: {
     homeManagerModules.theme = import ./modules/home/theme.nix;
     nixosConfigurations.gram = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs self;};
       modules = [
         ./system/hosts/gram
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.thomas = ./home/profiles/gram;
+
+          home-manager.extraSpecialArgs = {inherit inputs self;};
+        }
       ];
     };
-    homeConfigurations."thomas@gram" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {inherit inputs self;};
-      modules = [
-        ./home/profiles/gram
-      ];
-    };
+    # homeConfigurations."thomas@gram" = home-manager.lib.homeManagerConfiguration {
+    #   pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    #   extraSpecialArgs = {inherit inputs self;};
+    #   modules = [
+    #     ./home/profiles/gram
+    #   ];
+    # };
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
