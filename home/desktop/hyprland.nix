@@ -22,13 +22,16 @@
       ];
 
       general = {
-        border_size = 4;
-        gaps_in = 12;
-        gaps_out = 24;
+        border_size = 2;
+        gaps_in = 8;
+        gaps_out = 16;
+
+        "col.active_border" = "rgb(FFFFFF)";
+        "col.inactive_border" = "rgb(000000)";
       };
 
       decoration = {
-        rounding = 8;
+        rounding = 4;
       };
 
       misc = {
