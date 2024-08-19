@@ -4,5 +4,6 @@
     ./firefox.nix
     ./wezterm.nix
     ./anyrun.nix
+    ./theme.nix
   ];
 }
