@@ -1,6 +1,7 @@
 {inputs, config, pkgs, ...}:{
   imports = [
     inputs.hyprland.nixosModules.default
+    ./sound.nix
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
