@@ -15,7 +15,7 @@
   
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    blacklistedKernelModules = ["int3404_thermal"]; # Stop ACPI log spam
+    blacklistedKernelModules = ["int3403_thermal"]; # Stop ACPI log spam
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
