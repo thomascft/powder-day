@@ -1,4 +1,4 @@
-{config, pkgs, ...}:{
+{config, lib, pkgs, ...}:{
   home.username = "thomas";
   home.homeDirectory = "/home/thomas";
 
@@ -23,6 +23,26 @@
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;
+  };
+
+# Helix
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+
+    settings.theme = "tokyonight";
+
+    languages.language-server.nil = {
+      command = lib.getExe pkgs.nil;
+      config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
+    };
+
+    extraPackages = with pkgs; [
+      rust-analyzer
+      nil
+      marksman
+    ];
   };
   
 # Shell
