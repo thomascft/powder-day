@@ -35,6 +35,8 @@
     wezterm.url = "github:thomascft/wezterm-nightly-flake";
 
     anyrun.url = "github:anyrun-org/anyrun";
+
+    firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
