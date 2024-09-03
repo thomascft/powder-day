@@ -11,13 +11,17 @@
     
   time.timeZone = "America/Denver";
   
-  # Bootloader
+  # Kernel & Bootloader
   
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     blacklistedKernelModules = ["int3403_thermal"]; # Stop ACPI log spam
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    resumeDevice = "/dev/nvme0n1p2";
+    kernelParams = [
+      "resume_offset=533760"
+    ];
   };
 
   # User
