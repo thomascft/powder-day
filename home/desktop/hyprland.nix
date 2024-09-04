@@ -113,4 +113,5 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
+  services.gnome-keyring.enable = true;
 }
