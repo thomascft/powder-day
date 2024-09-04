@@ -9,9 +9,10 @@
   # Nix Settings
   
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elm (lib.getName pkg) [
+    builtins.elem (lib.getName pkg) [
       "nvidia-settings"
       "nvidia-x11"  
+      "anytype"
   ];
 
   nixpkgs.overlays = [

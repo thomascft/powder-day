@@ -6,4 +6,6 @@
     ./anyrun.nix
     ./theme.nix
   ];
+
+  services.gnome-keyring.enable = true;
 }
