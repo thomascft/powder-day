@@ -6,4 +6,8 @@
     ./anyrun.nix
     ./theme.nix
   ];
+
+  home.programs = with pkgs; [
+    anytype
+  ];
 }
